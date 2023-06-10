@@ -3,7 +3,7 @@ import { connect } from 'mongoose'
 
 const port = process.env.PORT || 8080 
 const ready = () => {
-    console.log('server ready on port' +port )
+    console.log('server ready on port' + port )
     connect(process.env.LINK_MONGO)
         .then(() => console.log('connected to database'))
         .catch(err=>console.log(err))

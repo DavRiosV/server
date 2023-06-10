@@ -2,6 +2,7 @@ import express from 'express'
 import 'dotenv/config.js'
 import error_handler from './middlewares/error.js'
 import not_found_handler from './middlewares/notfound.js'
+import router from './router/index.js'
 
 const server = express()
 
@@ -11,7 +12,7 @@ server.use(express.json())
 server.use(express.urlencoded({extended:true}))
 
 //endpoints
-// server.use('/api', index_router)
+server.use('/api',router)
 server.use(error_handler)
 server.use(not_found_handler)
 
